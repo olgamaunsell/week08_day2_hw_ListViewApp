@@ -32,7 +32,7 @@ class ItemsForSaleAdapter extends ArrayAdapter<ItemForSale> {
 
 
         TextView ranking = listItemView.findViewById(R.id.ranking);
-        ranking.setText(currentItem.getRanking());
+        ranking.setText(currentItem.getRanking().toString());
 
         TextView name =listItemView.findViewById(R.id.name);
         name.setText(currentItem.getName().toString());
@@ -41,7 +41,8 @@ class ItemsForSaleAdapter extends ArrayAdapter<ItemForSale> {
         location.setText(currentItem.getLocation().toString());
 
         TextView price =listItemView.findViewById(R.id.price);
-        String priceString = String.format("%.2f", currentItem.getPrice());
+        String priceString = String.format("£%.2f", currentItem.getPrice());
+
         price.setText(priceString);
 
         return listItemView;
